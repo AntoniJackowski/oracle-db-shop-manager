@@ -162,7 +162,7 @@ def insert_product(data, alergens_str):
 
 
 
-## How to Run
+## How to Run?
 
 Follow these steps to set up and run the project on your local machine:
 
