@@ -16,4 +16,15 @@ The diagram below presents the initial conceptual relational model. During the p
 
 The database is fully populated with sample data to simulate a real-world store environment. Below is a raw view of the `PRODUKTY` table directly from the Oracle database.
 
-![`PRODUKTY` table](images/products_table.png)
+![PRODUKTY table content](images/products.png)
+
+### App Interface
+
+Here is how the application interface looks in practice. The uncomplicated GUI provides an intuitive way to interact with the underlying Oracle database without writing SQL. 
+
+![Application (suppliers tab)](images/app_suppliers.png)
+
+The application also provides report generation. Below you can see a view of the raports tab.
+
+![Application (raports tab)](images/app_raports.png)
+
