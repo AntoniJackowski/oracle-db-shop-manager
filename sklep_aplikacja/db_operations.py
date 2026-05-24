@@ -5,7 +5,7 @@ import oracledb
 # Parametry konfiguracyjne niezbędne do nawiązania sesji z serwerem bazy danych Oracle
 DB_CONFIG = {
     "user": "sklep_projekt",
-    "password": "haslo",
+    "password": "",
     "dsn": "localhost:1521/XEPDB1"
 }
 
