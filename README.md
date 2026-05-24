@@ -37,11 +37,37 @@ This project shows how to connect an Oracle database with a Python application. 
 * **PDF Reports & Charts:** The application can generate PDF documents (like customer cards or supplier lists) and draw warehouse statistics charts using the `matplotlib` library.
 * **Safe Data Saving:** The Python code uses database transactions (`commit` and `rollback`) to make sure all data is saved safely and without errors.
 
-## Technologies
+## Code Examples
 
-* **Database:** Oracle SQL
-* **Programming Language:** Python 3
-* **Desktop GUI:** Tkinter
-* **Database Connection:** `oracledb`
-* **PDF Reports:** `fpdf`
-* **Data Visualization:** `matplotlib`
+### Stored Procedure with Custom Exception Handling
+
+The `przyznaj_premie` (grant bonus) procedure handles employee bonus allocations. It features explicit exception handling, including a custom exception (`e_premia_za_wysoka`) that prevents assigning a bonus higher than the employee's base salary, as well as handling standard errors like `NO_DATA_FOUND`.
+
+```sql
+CREATE OR REPLACE PROCEDURE przyznaj_premie (p_id_prac NUMBER, p_premia NUMBER) AS
+    v_pensja NUMBER;
+    e_premia_za_wysoka EXCEPTION;
+BEGIN
+    SELECT pensja INTO v_pensja FROM pracownicy WHERE id_pracownika = p_id_prac;
+    
+    IF p_premia > v_pensja THEN
+        RAISE e_premia_za_wysoka;
+    END IF;
+    
+    DBMS_OUTPUT.PUT_LINE('Pracownik ID ' || p_id_prac || ' otrzymał premię: ' || p_premia);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('BŁĄD: Nie ma pracownika o ID ' || p_id_prac);
+    WHEN e_premia_za_wysoka THEN
+        DBMS_OUTPUT.PUT_LINE('BŁĄD: Premia (' || p_premia || ') nie może być wyższa niż pensja!');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Wystąpił nieoczekiwany błąd.');
+END;
+```
+
+## Technologies & Tools
+
+* **Database:** Oracle Database XE, SQL, PL/SQL
+* **Application (GUI & Backend):** Python, Tkinter, `oracledb`
+* **Data Visualization & PDF:** `matplotlib`, `fpdf`
+* **Development & Modeling:** Oracle SQL Developer, Data Modeler, Draw.io
