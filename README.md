@@ -4,5 +4,16 @@
 
 System for grocery store that integrates a relational database with a custom-built desktop application. The application allows users to manage store data such as products, employees, and orders, while also providing tools for generating reports.
 
-## Database Architecture
+## Project Preview
 
+### Database Architecture
+
+The diagram below presents the initial conceptual relational model. During the physical database implementation in Oracle SQL, the schema was further normalized. To adhere to the First Normal Form (1NF), the multi-valued alergeny attribute was extracted from the `PRODUKTY` table into a dedicated associative table `PRODUKTY_ALERGENY`. This allows for a clean One-to-Many relationship and ensures better data integrity.
+
+![Relational Database Model](images/erd_diagram.png)
+
+### Database Contents
+
+The database is fully populated with sample data to simulate a real-world store environment. Below is a raw view of the `PRODUKTY` table directly from the Oracle database.
+
+![`PRODUKTY` table](images/products_table.png)
