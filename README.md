@@ -162,5 +162,7 @@ def insert_product(data, alergens_str):
 
 
 
-## Author
-* **Antoni Jackowski**
+---
+<p align="center">
+  Made with 💻 by <strong>Antoni Jackowski</strong>
+</p>
