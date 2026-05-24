@@ -28,3 +28,20 @@ The application also provides report generation. Below you can see a view of the
 
 ![Application (raports tab)](images/app_raports.png)
 
+## Main Features
+
+This project shows how to connect an Oracle database with a Python application. The most important features are:
+
+* **Database Design:** A well-structured relational database with 13 tables to store information about products, employees, and customers.
+* **Data Management (CRUD):** You can easily add, view, edit, and delete records using the application interface, without writing any SQL code.
+* **PDF Reports & Charts:** The application can generate PDF documents (like customer cards or supplier lists) and draw warehouse statistics charts using the `matplotlib` library.
+* **Safe Data Saving:** The Python code uses database transactions (`commit` and `rollback`) to make sure all data is saved safely and without errors.
+
+## Technologies
+
+* **Database:** Oracle SQL
+* **Programming Language:** Python 3
+* **Desktop GUI:** Tkinter
+* **Database Connection:** `oracledb`
+* **PDF Reports:** `fpdf`
+* **Data Visualization:** `matplotlib`
