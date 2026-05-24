@@ -162,6 +162,44 @@ def insert_product(data, alergens_str):
 
 
 
+## How to Run
+
+Follow these steps to set up and run the project on your local machine:
+
+1. **Set up the Database:**
+   * Ensure you have Oracle Database XE installed and running.
+   * Open your preferred SQL client (e.g., Oracle SQL Developer).
+   * Execute the `Sklep_DDL_DML_Full.sql` script to create all tables, triggers, procedures, and insert the sample data.
+
+2. **Configure the Environment:**
+   * Open your terminal in the project directory.
+   * Create a Python virtual environment:
+     ```bash
+     python -m venv venv
+     ```
+   * Activate the virtual environment:
+     * **Windows:** `venv\Scripts\activate`
+     * **macOS/Linux:** `source venv/bin/activate`
+
+3. **Install Dependencies:**
+   * Install the required Python libraries using the provided file:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Update Database Credentials:**
+   * Open the `db_operations.py` file and locate the `DB_CONFIG` dictionary.
+   * Update the `user`, `password` (e.g., `"your_password"`), and `dsn` fields with your local Oracle Database credentials.
+
+5. **Run the Application:**
+   * **Important note for IDE users:** If you are using VS Code or PyCharm, ensure that your editor is using the Python interpreter from the newly created `venv` folder before running the script.
+   * Start the desktop application by running:
+     ```bash
+     python main_gui.py
+     ```
+
+
+
 ---
 <p align="center">
   Made with 💻 by <strong>Antoni Jackowski</strong>
